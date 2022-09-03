@@ -11,11 +11,46 @@ public class ProcessingArrays {
         printArray(scores);
         // 4. Find the maximum element in the array
         // and return the index of the element
-        int index = findMaximumElement(scores);
-        System.out.println("The maximum element is at index " + index);
+        int index = findMaximumElementIndex(scores);
+        System.out.println("The maximum element is at index " + index);   
+
+         // 6. Find the maximum element in the array
+         double maxElement = findMaximumElement(scores);
+         System.out.println("The maximum element of the array is " + maxElement);
+        
+        // 5. Find the sum of the array elements
+        double sumOfArray = getSumOfArrayElements(scores);
+        System.out.println("The sum of the array elements is: " + sumOfArray); 
+        
+        double average = sumOfArray / scores.length;
+        // System.out.println("The average of the array elements is: " + average);
+        System.out.printf("The average of the array element is %6.2f\n", average);
+       
+
     }
 
-    private static int findMaximumElement(double[] userScores) {
+   
+    private static double findMaximumElement(double[] userScores) {
+        double maxValue = userScores[0];
+        for (int i = 1; i < userScores.length; i++){
+            if (userScores[i] > maxValue){
+                maxValue = userScores[i];
+            }
+        }
+        return maxValue;
+    }
+
+
+    private static double getSumOfArrayElements(double[] userScores) {
+        double sum = 0;
+        for (int i = 0; i < userScores.length; i++){
+            sum = sum + userScores[i];  // sum += userScores[i];
+        }
+        return sum;
+    }
+
+
+    private static int findMaximumElementIndex(double[] userScores) {
         int currentIndex = 0;
         double maxValue = userScores[0];
         for (int i = 1; i < userScores.length; i++){
@@ -31,8 +66,13 @@ public class ProcessingArrays {
         // [a, b] Math.random()* (b - a + 1) + a
         // [0, 100] Math.random() * 101
         //Math.random();
+        
         for (int i = 0; i < userScores.length; i++){
-            userScores[i] = Math.random() * 101;
+            double rand = Math.random() * 101;
+            rand = rand * 10;
+            long temp = Math.round(rand);
+            userScores[i] = temp / 10.0;
+
         }
     }
 
@@ -40,6 +80,7 @@ public class ProcessingArrays {
         for (int i = 0; i < userScores.length; i++){
             System.out.print(userScores[i] + " ");
         }
+        System.out.println();
     }
 
     private static void initializeArray(double[] userScores) {
