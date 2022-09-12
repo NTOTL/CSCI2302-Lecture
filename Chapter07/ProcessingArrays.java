@@ -26,10 +26,24 @@ public class ProcessingArrays {
         // System.out.println("The average of the array elements is: " + average);
         System.out.printf("The average of the array element is %6.2f\n", average);
        
+        // 7. Randomly shuffling an array
+        shuffleArray(scores);
+        printArray(scores);
+        
 
     }
 
    
+    private static void shuffleArray(double[] userScores) {
+        for (int i = 0; i < userScores.length; i++){
+            int index = (int)(Math.random() * userScores.length);
+            double temp = userScores[i];
+            userScores[i] = userScores[index];
+            userScores[index] = temp;
+        }
+    }
+
+
     private static double findMaximumElement(double[] userScores) {
         double maxValue = userScores[0];
         for (int i = 1; i < userScores.length; i++){
