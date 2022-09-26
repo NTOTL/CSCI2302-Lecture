@@ -23,6 +23,8 @@ public class Exercise7_26 {
             // they are strictly identical
        }
 
+       input.close();
+
     }
 
    

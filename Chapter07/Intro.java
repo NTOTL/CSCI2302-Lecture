@@ -32,5 +32,7 @@ public class Intro {
         if (score5 > average)
             count++; // count = count + 1;
 
+        input.close();
+
     }
 }

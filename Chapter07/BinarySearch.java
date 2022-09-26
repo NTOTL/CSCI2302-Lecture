@@ -1,7 +1,5 @@
 package Chapter07;
 
-import javax.lang.model.element.Element;
-
 public class BinarySearch {
     
 
