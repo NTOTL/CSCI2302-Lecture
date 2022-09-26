@@ -9,6 +9,18 @@ public class ProcessingArrays {
         initializeArrayWithRandomValues(scores);
         // 3. Print an array
         printArray(scores);
+
+        processArray(scores);        
+        // Randomly shuffling an array
+        shuffleArray(scores);
+        
+        printArray(scores);
+        
+
+    }
+
+   
+    private static void processArray(double[] scores) {
         // 4. Find the maximum element in the array
         // and return the index of the element
         int index = findMaximumElementIndex(scores);
@@ -26,14 +38,10 @@ public class ProcessingArrays {
         // System.out.println("The average of the array elements is: " + average);
         System.out.printf("The average of the array element is %6.2f\n", average);
        
-        // 7. Randomly shuffling an array
-        shuffleArray(scores);
-        printArray(scores);
         
-
     }
 
-   
+
     private static void shuffleArray(double[] userScores) {
         for (int i = 0; i < userScores.length; i++){
             int index = (int)(Math.random() * userScores.length);
