@@ -1,24 +1,32 @@
 package Chapter09;
 
 public class Circle {
-    // Data field: radius
-    private double radius = 1.0;
+    private double radius;    
 
-    // Method: calculating the area of the circle
+    public Circle(double radius) {
+        this.radius = radius;
+    }
+
+    public double getRadius() {
+        return radius;
+    }
+
+    public void setRadius(double radius) {
+        this.radius = radius;
+    }
+
     public double getArea(){
         return (Math.PI * radius * radius);
     }
 
-    // Method: calculating the circumference of the circle
-    public double getCircumference(){
+    public double getPerimeter(){
         return (Math.PI * 2 * radius);
     }
 
-    public double getRadius(){
-        return radius;
+    public String toString(){
+        return "The radius of the circle is " + this.radius + ". The area is " + this.getArea() + ". The perimeter is " + this.getPerimeter() + ".";
     }
+    
 
-    public void setRadius(double newRadius){
-        radius = newRadius;
-    }
+    
 }

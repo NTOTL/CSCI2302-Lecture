@@ -15,24 +15,41 @@ public class Car {
         this.make = make;
         this.model = newModel;
         this.VIN = VIN;
+        this.mileage = 1.0;
     }
 
-    // getters
-    public String getMake(){
-        return this.make;
-    }
-    public String getModel(){
-        return this.model;
-    }
-    public double getMileage(){
-        return this.mileage;
-    }
-    public String getVIN(){
-        return this.VIN;
+    public String getMake() {
+        return make;
     }
 
-    // setters
-    public void setMake(String newMake){
-        this.make = newMake;
+    public void setMake(String make) {
+        this.make = make;
     }
+
+    public String getModel() {
+        return model;
+    }
+
+    public void setModel(String model) {
+        this.model = model;
+    }
+
+    public double getMileage() {
+        return mileage;
+    }
+
+    public void setMileage(double mileage) {
+        this.mileage = mileage;
+    }
+
+    public String getVIN() {
+        return VIN;
+    }
+
+    public void setVIN(String vIN) {
+        VIN = vIN;
+    }
+
+    
+    
 }
