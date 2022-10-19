@@ -1,42 +1,54 @@
 package Project;
-import java.util.Scanner;;
+import java.util.Scanner;
+
+import javax.swing.border.Border;;
 public class TicTacToeGame {
     public static void main(String[] args) {
         // 1. Set up the board: create a 3 X 3 matrix of string data type with default value
-    final int BOARD_SIZE = 3;
-    String currentPlayer = "X";
-    String[][] board = new String[BOARD_SIZE][BOARD_SIZE];
-    setUpBoard(board);
-    // 2. Print the board
-    printBoard(board);
-    // 3. Prompt the user to pick a spot on the board
-    Scanner userInput = new Scanner(System.in);
-    System.out.print("Please pick a row (0, 1, or 2): ");
-    int rowId = userInput.nextInt();
-    System.out.print("Please pick a column (0, 1, or 2: ");
-    int columnId = userInput.nextInt();  
+        final int BOARD_SIZE = 3;
+        String currentPlayer = "X";
+        boolean isGameOver = false;
 
-    // 4. if the spot is available, then place the marker on the spot
-    // else, ask the user to pick a different spot
-    
-    while (!isValidMove(board, rowId, columnId)){
+        String[][] board = new String[BOARD_SIZE][BOARD_SIZE];
+        setUpBoard(board);
+        // 2. Print the board
+        printBoard(board);
+
+        // 3. Prompt the user to pick a spot on the board
+        Scanner userInput = new Scanner(System.in);
         System.out.print("Please pick a row (0, 1, or 2): ");
-        rowId = userInput.nextInt();
+        int rowId = userInput.nextInt();
         System.out.print("Please pick a column (0, 1, or 2: ");
-        columnId = userInput.nextInt();
-    }
-    userInput.close();
-    // place the marker at the spot
+        int columnId = userInput.nextInt(); 
 
-    placeMarker(board, rowId, columnId, currentPlayer);
-    
-    // 5. Print the board and update the game status
-    printBoard(board);
+        // if (isGameOver == true)
+        //    Print the confirmation message
+        // else
+        //    Repeat step 4 to 5
+        while (!isGameOver){             
+            // 4. if the spot is available, then place the marker on the spot
+            // else, ask the user to pick a different spot            
+            if (isValidMove(board, rowId, columnId)){
+                // place the marker at the spot
+                placeMarker(board, rowId, columnId, currentPlayer);
 
-    // if (isGameOver == true)
-    //    Print the confirmation message
-    // else
-    //    Repeat step 3 to 5
+                isGameOver = updateGameStatus(board, currentPlayer);
+            
+                 // 5. Print the board and update the game status
+                printBoard(board); 
+                // switch the player
+                if (currentPlayer == "X")
+                    currentPlayer = "O";
+                else
+                    currentPlayer = "X";               
+            }  
+            System.out.print("Please pick a row (0, 1, or 2): ");
+            rowId = userInput.nextInt();
+            System.out.print("Please pick a column (0, 1, or 2: ");
+            columnId = userInput.nextInt();
+        } 
+        userInput.close();
+   
     }
 
     private static void placeMarker(String[][] board, int rowId, int columnId, String currentPlayer) {
