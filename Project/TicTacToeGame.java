@@ -51,6 +51,10 @@ public class TicTacToeGame {
    
     }
 
+    private static boolean updateGameStatus(String[][] board, String currentPlayer) {
+        return false;
+    }
+
     private static void placeMarker(String[][] board, int rowId, int columnId, String currentPlayer) {
         board[rowId][columnId] = currentPlayer;
     }
