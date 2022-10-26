@@ -32,5 +32,15 @@ public class Circle extends GeometriObject {
         return sb.toString();
     }
 
+    @Override
+    public boolean equals(Object obj){
+        if (obj instanceof Circle){
+            if (this.radius == ((Circle)obj).radius){
+                return true;
+            }
+        }
+        return false;
+    }
+
     
 }
