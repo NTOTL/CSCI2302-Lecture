@@ -1,6 +1,6 @@
 package Chapter11.Geometry;
 
-public class Circle extends GeometriObject {
+public class Circle extends GeometricObject {
     private double radius;
 
     public Circle(String color, boolean filled, double radius) {

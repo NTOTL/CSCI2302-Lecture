@@ -2,19 +2,19 @@ package Chapter11.Geometry;
 
 import java.util.Date;
 
-public class GeometriObject {
+public class GeometricObject {
     private String color;
     private boolean filled;
     private Date dateCreated;
 
 
-    public GeometriObject(String color, boolean filled) {
+    public GeometricObject(String color, boolean filled) {
         this.color = color;
         this.filled = filled;
         this.dateCreated = new Date();
     }
 
-    public GeometriObject() {
+    public GeometricObject() {
         this.dateCreated = new Date();
     }
 

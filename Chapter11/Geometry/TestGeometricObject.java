@@ -13,10 +13,10 @@ public class TestGeometricObject {
 
         System.out.println(c.equals(c2));
 
-        GeometriObject g = new GeometriObject("green", false);
+        GeometricObject g = new GeometricObject("green", false);
         System.out.println(c2.equals(g));
 
-        GeometriObject g1 = new Circle("green", false, 1.0);
+        GeometricObject g1 = new Circle("green", false, 1.0);
 
         System.out.println(c2.equals(g1));
 
