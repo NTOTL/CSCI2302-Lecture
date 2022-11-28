@@ -1,4 +1,4 @@
-package Chapter11;
+package Chapter11.Vehicle;
 
 public class TestVehicle {
     public static void main(String[] args) {

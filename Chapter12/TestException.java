@@ -1,6 +1,5 @@
 package Chapter12;
 
-import java.sql.Blob;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 

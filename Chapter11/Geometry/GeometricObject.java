@@ -2,7 +2,7 @@ package Chapter11.Geometry;
 
 import java.util.Date;
 
-public class GeometricObject {
+public abstract class GeometricObject {
     private String color;
     private boolean filled;
     private Date dateCreated;
@@ -35,6 +35,13 @@ public class GeometricObject {
         return dateCreated;
     }
 
+    // create two abstract methods
+    // 1. getArea()
+    public abstract double getArea();
+
+    // 2. getPerimeter()
+    public abstract double getPerimeter();
+
     // Methods
     public String toString(){
         //return "created on " + this.dateCreated + "\ncolor: " + this.color + " and filled: " + this.filled;
@@ -46,7 +53,5 @@ public class GeometricObject {
         sb.append(" and filled: ");
         sb.append(this.filled);
         return sb.toString();
-    }
-
-    
+    }    
 }

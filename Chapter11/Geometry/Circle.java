@@ -41,6 +41,16 @@ public class Circle extends GeometricObject {
         }
         return false;
     }
+    
+    @Override // the implementation of the abstract method in GeometricObject
+    public double getArea(){
+        return Math.PI * radius * radius;
+    }
+
+    @Override
+    public double getPerimeter() {
+        return Math.PI * radius * 2;
+    }
 
     
 }

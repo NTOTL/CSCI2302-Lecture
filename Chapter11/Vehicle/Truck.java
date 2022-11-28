@@ -1,4 +1,4 @@
-package Chapter11;
+package Chapter11.Vehicle;
 
 public class Truck extends MotorVehicle {   
     private double flat_bed_length;
