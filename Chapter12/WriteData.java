@@ -6,8 +6,6 @@ import java.io.PrintWriter;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-import javax.swing.text.StyledEditorKit.BoldAction;
-
 public class WriteData {
     public static void main(String[] args) throws IOException, InputMismatchException {
         java.io.File file = new File("Chapter12/scores.txt");
