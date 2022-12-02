@@ -6,29 +6,28 @@ public class Exercise12_24 {
         File file = new File("Chapter12/salary.txt");
         PrintWriter output = new PrintWriter(file);
 
-        for (int i = 1; i<= 1000; i++){
-            output.printf("FirstName%d LastName%d %s\n", i, i, getRankAndSalary());
+        for (int i = 1; i <=1000; i++){
+            output.printf("FirstName%s LastName%s %s\n", i, i, getRankAndSalary());
         }
+
         output.close();
     }
 
     private static String getRankAndSalary() {
         String[] ranks = new String[]{"assistant", "associate", "full"};
-        int rankIdx = (int)(Math.random() * 3);
+        int rankIdx = (int)(Math.random() * 3); // get randome integer 0-2;
         double salary = 0;
-        String rankAndSalary = "";
         switch (rankIdx){
             case 0:
-                salary = 50000 + Math.random() * 30001;  
-                break;              
+                salary = 50000 + Math.random() * 30001;
+                break;
             case 1:
                 salary = 60000 + Math.random() * 50001;
                 break;
             case 2:
                 salary = 75000 + Math.random() * 55001;
-                break;                
+                break;
         }
-        rankAndSalary = ranks[rankIdx] + " " + String.format("%8.2f", salary);
-        return rankAndSalary;
+        return String.format("%s %.2f", ranks[rankIdx], salary);
     }
 }
